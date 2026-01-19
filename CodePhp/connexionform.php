@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="">
 </head>
 <body>
-    <form action="CodePhp/connexion.php" method="POST">
+    <form action="connexion.php" method="POST">
         <label for="mail">Adresse Mail:</label>
         <input type="email" name="mail" id="mail" required="required"><br>
         <label for="mdp">Mot de passe:</label>

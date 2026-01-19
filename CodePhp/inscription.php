@@ -22,6 +22,6 @@ $mdp_hache = password_hash($mdp, PASSWORD_BCRYPT, $options);
     $reponse->bindValue(':mail', $email, PDO::PARAM_STR);
     $reponse->bindValue(':mdp', $mdp_hache, PDO::PARAM_STR);
     $reponse->execute();
-    header('Location: ../index.html');
+    header('Location: index.php');
     $reponse = closeCursor();
 ?>

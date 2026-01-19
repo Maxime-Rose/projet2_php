@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['mail'])){
-    header('Location: ../connexion.html');
+if (!isset ($_SESSION['role'])){
+    header('Location: connexionform.php');
     exit();
 }
 
@@ -18,5 +18,8 @@ if (!isset($_SESSION['mail'])){
 <body>
     <p>Bienvenue <?php echo($_SESSION['user']);?> </p><br>
     <p>Connexion du <?php echo($_SESSION['date']);?> à <?php echo($_SESSION['heure']); ?> </p>
+    <form action="deconnexion.php" method="POST">
+        <button type="submit"> Se déconnecter</button>
+    </form>
 </body>
 </html>
