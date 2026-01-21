@@ -13,7 +13,7 @@ $mail = $_POST['mail'];
 $mdpuser = $_POST['mdp'];
 
 if(!empty($mail) && !empty($mdpuser)){
-    $requete='SELECT mail, mdp, prenom, rolee FROM utilisateur WHERE mail = :mail ';
+    $requete='SELECT id, mail, mdp, prenom, rolee, statut FROM utilisateur WHERE mail = :mail ';
     $reponse=$bdd->prepare($requete);
     $reponse->bindValue(':mail', $mail , PDO::PARAM_STR);
     $reponse->execute();
@@ -27,6 +27,8 @@ if(!empty($mail) && !empty($mdpuser)){
         $_SESSION['date']= date("d-m-Y");
         $_SESSION['heure'] = date("H:i:s");
         $_SESSION['role'] = $tableau[0]['rolee'];
+        $_SESSION['id_user'] = $tableau[0]['id'];
+        $_SESSION['statut'] = $tableau[0]['statut'];
         header('Location: connecter.php');
     }else{
         header('Location: connexionform.php');

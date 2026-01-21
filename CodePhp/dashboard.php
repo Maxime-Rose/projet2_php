@@ -9,10 +9,6 @@ $requete = 'SELECT * FROM Ticket';
 $reponse = $bdd->prepare($requete);
 $reponse->execute();
 $tableau = $reponse->fetchAll();
-var_dump($tableau);
-foreach ($tableau['id'] as $valeur){
-    echo($valeur . "\n");
-} 
 
 ?>
 
@@ -26,7 +22,38 @@ foreach ($tableau['id'] as $valeur){
     <title>Dashboard <?php echo($_SESSION['user']);?></title>
 </head>
 <body>
-    <p>Bienvenue <?php echo($_SESSION['user']);?> </p><br>
+    <header>
+        <div class="navbar" id="navb">
+            <div class="navitem" id="navi"><a href="gestionuser.php">Gérer les utilisateurs</a></div>
+        </div>
+    </header>
+    <p>Bienvenue sur votre dashboard <?php echo($_SESSION['user']);?> </p><br>
+    <table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Titre</th>
+            <th>Description</th>
+            <th>Statut</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($tableau as $tableau): ?>
+            <tr>
+                <td><?= $tableau['id'] ?></td>
+                <td><?= htmlspecialchars($tableau['titre']) ?></td>
+                <td><?= htmlspecialchars($tableau['description']) ?></td>
+                <td><?= htmlspecialchars($tableau['statut']) ?></td>
+                <td><form action="test.php" method="POST">
+                        <input type="hidden" name="statut" value="<?php echo $tableau['statut']?>">
+                        <button type="submit">modifier statut</button>
+                    </form>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
+    
     <p>Connexion du <?php echo($_SESSION['date']);?> à <?php echo($_SESSION['heure']); ?> </p>
     <form action="deconnexion.php" method="POST">
         <button type="submit">Se déconnecter</button>
