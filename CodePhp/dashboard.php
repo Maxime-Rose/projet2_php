@@ -45,8 +45,18 @@ $tableau = $reponse->fetchAll();
                 <td><?= htmlspecialchars($tableau['description']) ?></td>
                 <td><?= htmlspecialchars($tableau['statut']) ?></td>
                 <td><form action="test.php" method="POST">
-                        <input type="hidden" name="statut" value="<?php echo $tableau['statut']?>">
-                        <button type="submit">modifier statut</button>
+                        <input type="hidden" name="stat" id="stat" value="<?= htmlspecialchars($tableau['statut'])?>">
+                        <input type="hidden" name="id" id="id" value="<?= htmlspecialchars($tableau['id'])?>">
+                        <button type="submit">
+                            <?php 
+                    if ($tableau['statut'] === 'ouvert'){
+                        echo "fermé le ticket";
+                    }
+                    if ($tableau['statut'] === 'fermé'){
+                        echo "réouvrir le ticket";
+                    }
+                    ?>
+                        </button>
                     </form>
                 </td>
             </tr>
