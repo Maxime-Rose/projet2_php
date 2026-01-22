@@ -26,12 +26,11 @@ if ($_SESSION['statut'] === "desactiver"){
             <div class="navitem"><a href="mestickets.php">Mes tickets </a></div>
             <div class="navitem"><a href="dashboard.php">Dashboard </a></div>
             <div class="navitem"><a href="connecter.php">Accueil </a></div>
+            <div class="navitem"><a href="creation_ticket.php">Créer un ticket</a></div>
+            <div class="navitem"><a href="deconnexion.php">Se déconnecter</a></div>
         </div>
     </header>
     <p>Bienvenue <?php echo($_SESSION['user']);?> </p><br>
     <p>Connexion du <?php echo($_SESSION['date']);?> à <?php echo($_SESSION['heure']); ?> </p>
-    <form action="deconnexion.php" method="POST">
-        <button type="submit"> Se déconnecter</button>
-    </form>
 </body>
 </html>

@@ -28,6 +28,8 @@ $tableau = $reponse->fetchAll();
             <div class="navitem"><a href="dashboard.php">Dashboard </a></div>
             <div class="navitem"><a href="connecter.php">Accueil </a></div>
             <div class="navitem"><a href="gestionuser.php">Gérer les utilisateur</a></div>
+            <div class="navitem"><a href="creation_ticket.php">Créer un ticket</a></div>
+            <div class="navitem"><a href="deconnexion.php">Se déconnecter</a></div>
         </div>
     </header>
     <p>Bienvenue sur votre dashboard <?php echo($_SESSION['user']);?> </p><br>
@@ -56,7 +58,7 @@ $tableau = $reponse->fetchAll();
                         <button type="submit">
                             <?php 
                     if ($tableau['statut'] === 'ouvert'){
-                        echo "fermé le ticket";
+                        echo "fermer le ticket";
                     }
                     if ($tableau['statut'] === 'fermé'){
                         echo "réouvrir le ticket";
@@ -71,8 +73,5 @@ $tableau = $reponse->fetchAll();
 </table>
     
     <p>Connexion du <?php echo($_SESSION['date']);?> à <?php echo($_SESSION['heure']); ?> </p>
-    <form action="deconnexion.php" method="POST">
-        <button type="submit">Se déconnecter</button>
-    </form>
 </body>
 </html>

@@ -28,6 +28,8 @@ $tableau = $reponse->fetchAll();
             <div class="navitem"><a href="mestickets.php">Mes tickets </a></div>
             <div class="navitem"><a href="dashboard.php">Dashboard </a></div>
             <div class="navitem"><a href="connecter.php">Accueil </a></div>
+            <div class="navitem"><a href="creation_ticket.php">Créer un ticket</a></div>
+            <div class="navitem"><a href="deconnexion.php">Se déconnecter</a></div>
         </div>
     </header>
     <table>

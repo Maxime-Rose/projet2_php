@@ -18,6 +18,7 @@ $reponse->bindValue(':id_user',$_SESSION['id_user'], PDO::PARAM_INT);
 $reponse->bindValue(':titre', $titre, PDO::PARAM_STR);
 $reponse->bindValue(':description', $description, PDO::PARAM_STR);
 $reponse->execute();
+header("Location:mestickets.php");
 
 
 

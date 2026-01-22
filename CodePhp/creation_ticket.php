@@ -16,8 +16,18 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <title>Créer un ticket</title>
+    <link rel="stylesheet" href="../CodeCSS/creation_ticket.css">
 </head>
 <body>
+        <header>
+        <div class="navbar">
+            <div class="navitem"><a href="mestickets.php">Mes tickets </a></div>
+            <div class="navitem"><a href="dashboard.php">Dashboard </a></div>
+            <div class="navitem"><a href="connecter.php">Accueil </a></div>
+            <div class="navitem"><a href="creation_ticket.php">Créer un ticket</a></div>
+            <div class="navitem"><a href="deconnexion.php">Se déconnecter</a></div>
+        </div>
+    </header>
 
 <h2>Créer un ticket</h2>
 

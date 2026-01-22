@@ -27,6 +27,8 @@ $tableau = $reponse->fetchAll();
             <div class="navitem"><a href="mestickets.php">Mes tickets </a></div>
             <div class="navitem"><a href="dashboard.php">Dashboard </a></div>
             <div class="navitem"><a href="connecter.php">Accueil </a></div>
+            <div class="navitem"><a href="creation_ticket.php">Créer un ticket</a></div>
+            <div class="navitem"><a href="deconnexion.php">Se déconnecter</a></div>
         </div>
     </header>
     <table>
@@ -37,6 +39,7 @@ $tableau = $reponse->fetchAll();
             <th>Description</th>
             <th>Statut</th>
             <th>Date création</th> 
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -47,6 +50,11 @@ $tableau = $reponse->fetchAll();
                 <td><?= htmlspecialchars($tableau['description']) ?></td>
                 <td><?= htmlspecialchars($tableau['statut']) ?></td>
                 <td><?= htmlspecialchars($tableau['DateCreation'])?></td>
+                <td><form action="suppression.php" method="POST">
+                    <input type="hidden" name="id" id="id" value="<?= htmlspecialchars($tableau['id'])?>">
+                    <button type="submit">Supprimer le ticket</button>     
+                </form>
+                </td>
             </tr>
         <?php endforeach; ?>
     </tbody>

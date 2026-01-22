@@ -1,26 +1,16 @@
 <?php
 session_start();
-include 'connexionform.php';
 
-$ticket = $_POST['Ticket'];
+include "acces.php";
 
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 
-$stmt = $pdo->prepare("SELECT user_id FROM tickets WHERE");
-$stmt->execute([$ticketId]);
-$ticket = $stmt->fetch();
+$idticket = $_POST['id'];
 
-if (!$ticket) {
-    die("Ticket introuvable");
-}
-
-
-if (
-    $_SESSION['rolee'] === 'admin' ||
-    ($ticket['id_user'] == $_SESSION['id_user'])
-) {
-    $delete = $pdo->prepare("DELETE FROM Ticket WHERE ");
-    $delete->execute([$ticket]);
-    
-} else {
-    die("Accès refusé ");
-}
+$requete = 'DELETE FROM Ticket WHERE id = :idticket';
+$reponse=$bdd->prepare($requete);
+$reponse->bindValue(":idticket", $idticket, PDO::PARAM_INT);
+$reponse->execute();
+header('Location:mestickets.php');
+?>
