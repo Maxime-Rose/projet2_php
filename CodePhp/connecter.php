@@ -18,14 +18,14 @@ if ($_SESSION['statut'] === "desactiver"){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil - <?php echo($_SESSION['user']);?></title>
+    <link rel="stylesheet" href="../CodeCSS/connecter.css">
 </head>
 <body>
     <header>
         <div class="navbar">
-            <div class="navitem"><a href="">Mon espace personnel </a></div>
-        </div>
-        <div class="navbar">
+            <div class="navitem"><a href="mestickets.php">Mes tickets </a></div>
             <div class="navitem"><a href="dashboard.php">Dashboard </a></div>
+            <div class="navitem"><a href="connecter.php">Accueil </a></div>
         </div>
     </header>
     <p>Bienvenue <?php echo($_SESSION['user']);?> </p><br>

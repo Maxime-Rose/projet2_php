@@ -20,9 +20,16 @@ $tableau = $reponse->fetchAll();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion des utilisateur</title>
-    <link type="stylesheet" href="../CodeCSS/gestionuser.css">
+    <link rel="stylesheet" href="../CodeCSS/gestionuser.css">
 </head>
 <body>
+        <header>
+        <div class="navbar">
+            <div class="navitem"><a href="mestickets.php">Mes tickets </a></div>
+            <div class="navitem"><a href="dashboard.php">Dashboard </a></div>
+            <div class="navitem"><a href="connecter.php">Accueil </a></div>
+        </div>
+    </header>
     <table>
     <thead>
         <tr>
@@ -32,6 +39,7 @@ $tableau = $reponse->fetchAll();
             <th>Mail</th>
             <th>Role</th>
             <th>Statut</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>

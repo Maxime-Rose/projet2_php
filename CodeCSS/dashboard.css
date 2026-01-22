@@ -1,65 +1,163 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Marianne", "Segoe UI", Roboto, Arial, sans-serif;
 }
 
 body {
-    background: linear-gradient(135deg, #1e1e2f, #2c2c54);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #ffffff;
+  background: linear-gradient(180deg, #0b1c2d, #0f172a);
+  color: #f8fafc;
+  min-height: 100vh;
 }
 
-.dashboard-titre {
-    background-color: #2f2f46;
-    padding: 30px 40px;
-    border-radius: 12px;
+header {
+  background: linear-gradient(90deg, #0b1c2d, #1e3a8a);
+  border-bottom: 4px solid #dc2626;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.5);
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 1.3rem 2rem;
+}
+
+.navitem a {
+  color: #f8fafc;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.navitem a:hover {
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 -3px 0 #ffffff;
+}
+
+
+p {
+  text-align: center;
+  margin: 1.6rem 0;
+  font-size: 1.05rem;
+  color: #e5e7eb;
+}
+
+
+table {
+  width: 92%;
+  margin: 2.5rem auto;
+  border-collapse: collapse;
+  background: #020617;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+thead {
+  background: linear-gradient(90deg, #1e3a8a, #2563eb);
+}
+
+thead th {
+  padding: 1rem 1.1rem;
+  text-align: left;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+tbody td {
+  padding: 0.9rem 1.1rem;
+  font-size: 0.9rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+tbody tr:hover {
+  background: rgba(37, 99, 235, 0.18);
+}
+
+button {
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+  border: none;
+  color: #ffffff;
+  padding: 0.45rem 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.45);
+}
+
+
+form {
+  display: inline;
+}
+
+form[action="deconnexion.php"] {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+form[action="deconnexion.php"] button {
+  background: linear-gradient(135deg, #7f1d1d, #dc2626);
+}
+
+form[action="deconnexion.php"] button:hover {
+  box-shadow: 0 6px 18px rgba(220, 38, 38, 0.55);
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  table {
     width: 100%;
-    max-width: 450px;
-    text-align: center;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-}
+  }
 
+  thead {
+    display: none;
+  }
 
-.dashboard-titre h1 {
-    margin-bottom: 20px;
-    font-size: 28px;
-    color: #00d4ff;
-}
-
-.bienvenue {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.bienvenue span {
-    font-weight: bold;
-    color: #00ffcc;
-}
-
-.connection-info {
-    font-size: 14px;
-    opacity: 0.8;
-    margin-bottom: 25px;
-}
-
-/* Bouton de déconnexion */
-.deco_bouton {
-    background-color: #ff4b5c;
-    border: none;
-    padding: 12px 25px;
-    color: #ffffff;
-    font-size: 15px;
+  tbody tr {
+    display: block;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
+    overflow: hidden;
+  }
 
-.deco_bouton:hover {
-    background-color: #ff2f44;
-    transform: scale(1.05);
+  tbody td {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.7rem 1rem;
+  }
+
+  tbody td::before {
+    content: attr(data-label);
+    font-weight: 700;
+    color: #93c5fd;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
 }

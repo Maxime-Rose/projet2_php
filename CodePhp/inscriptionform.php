@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription</title>
+    <link rel="stylesheet" href="../CodeCSS/inscription.css">
 </head>
 <body>
     <form action="inscription.php" method="POST">
@@ -21,5 +22,6 @@
         
         <button type="submit">s'inscrire</button>
     </form>
+    <div class="connexion"><a href="connexionform.php">Déjà inscrit ? Clique ici</a></div>
 </body>
 </html>

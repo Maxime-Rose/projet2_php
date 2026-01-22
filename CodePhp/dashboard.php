@@ -22,19 +22,24 @@ $tableau = $reponse->fetchAll();
     <title>Dashboard <?php echo($_SESSION['user']);?></title>
 </head>
 <body>
-    <header>
-        <div class="navbar" id="navb">
-            <div class="navitem" id="navi"><a href="gestionuser.php">Gérer les utilisateurs</a></div>
+      <header>
+        <div class="navbar">
+            <div class="navitem"><a href="mestickets.php">Mes tickets </a></div>
+            <div class="navitem"><a href="dashboard.php">Dashboard </a></div>
+            <div class="navitem"><a href="connecter.php">Accueil </a></div>
+            <div class="navitem"><a href="gestionuser.php">Gérer les utilisateur</a></div>
         </div>
     </header>
     <p>Bienvenue sur votre dashboard <?php echo($_SESSION['user']);?> </p><br>
-    <table>
+<table>
     <thead>
         <tr>
             <th>ID</th>
             <th>Titre</th>
             <th>Description</th>
             <th>Statut</th>
+            <th>Date création</th> 
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -44,7 +49,8 @@ $tableau = $reponse->fetchAll();
                 <td><?= htmlspecialchars($tableau['titre']) ?></td>
                 <td><?= htmlspecialchars($tableau['description']) ?></td>
                 <td><?= htmlspecialchars($tableau['statut']) ?></td>
-                <td><form action="test.php" method="POST">
+                <td><?= htmlspecialchars($tableau['DateCreation'])?></td>
+                <td><form action="gestionticket.php" method="POST">
                         <input type="hidden" name="stat" id="stat" value="<?= htmlspecialchars($tableau['statut'])?>">
                         <input type="hidden" name="id" id="id" value="<?= htmlspecialchars($tableau['id'])?>">
                         <button type="submit">

@@ -1,17 +1,53 @@
-.bouton {
-    padding: 12px;
-    background: #007bff;
-    color: white;
-    font-size: 16px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.3s;
-    text-decoration: none;
-    
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Marianne","Segoe UI",Roboto,Arial,sans-serif
 }
 
-/* Hover button */
-.bouton:hover {
-    background: #0056b3;
+body{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:2rem;
+  background:linear-gradient(180deg,#0b1c2d,#0f172a)
+}
+
+.bouton{
+  display:inline-block;
+  padding:1rem 2.2rem;
+  text-decoration:none;
+  color:#ffffff;
+  font-size:.9rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  border-radius:8px;
+  background:linear-gradient(135deg,#1e3a8a,#2563eb);
+  box-shadow:0 10px 25px rgba(0,0,0,.5);
+  transition:transform .2s,box-shadow .2s
+}
+
+.bouton:hover{
+  transform:translateY(-3px);
+  box-shadow:0 14px 30px rgba(37,99,235,.55)
+}
+
+.bouton:nth-child(2){
+  background:linear-gradient(135deg,#7f1d1d,#dc2626)
+}
+
+.bouton:nth-child(2):hover{
+  box-shadow:0 14px 30px rgba(220,38,38,.55)
+}
+
+@media(max-width:600px){
+  body{
+    flex-direction:column
+  }
+  .bouton{
+    width:80%;
+    text-align:center
+  }
 }

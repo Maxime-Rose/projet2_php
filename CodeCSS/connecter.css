@@ -1,0 +1,114 @@
+/* ================================
+   ACCUEIL – STYLE INSTITUTION FRANÇAISE
+   Sobriété • Autorité • Clarté
+   ================================ */
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Marianne", "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0b1c2d, #0f172a);
+  color: #f8fafc;
+}
+
+/* ================================
+   HEADER / NAVBAR
+   ================================ */
+header {
+  background: linear-gradient(90deg, #0b1c2d, #1e3a8a);
+  border-bottom: 4px solid #dc2626;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.45);
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 1.3rem 2rem;
+}
+
+.navitem a {
+  color: #f8fafc;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.navitem a:hover {
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 -3px 0 #ffffff;
+}
+
+/* ================================
+   CONTENU PRINCIPAL
+   ================================ */
+p {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  color: #e5e7eb;
+}
+
+p:first-of-type {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-top: 3rem;
+}
+
+/* ================================
+   FORMULAIRE / BOUTON
+   ================================ */
+form {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+button {
+  background: linear-gradient(135deg, #7f1d1d, #dc2626);
+  border: none;
+  color: #ffffff;
+  padding: 0.7rem 1.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(220, 38, 38, 0.55);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* ================================
+   RESPONSIVE
+   ================================ */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  p:first-of-type {
+    font-size: 1.2rem;
+  }
+}

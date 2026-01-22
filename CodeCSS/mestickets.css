@@ -43,7 +43,7 @@ header{
 }
 
 table{
-  width:94%;
+  width:92%;
   margin:3rem auto;
   border-collapse:collapse;
   background:#020617;
@@ -59,15 +59,15 @@ thead{
 thead th{
   padding:1rem 1.1rem;
   text-align:left;
-  font-size:.8rem;
+  font-size:.85rem;
   font-weight:700;
   text-transform:uppercase;
   letter-spacing:.06em
 }
 
 tbody td{
-  padding:.85rem 1.1rem;
-  font-size:.88rem;
+  padding:.9rem 1.1rem;
+  font-size:.9rem;
   border-bottom:1px solid rgba(255,255,255,.06)
 }
 
@@ -77,25 +77,6 @@ tbody tr:nth-child(even){
 
 tbody tr:hover{
   background:rgba(37,99,235,.18)
-}
-
-button{
-  background:linear-gradient(135deg,#1e3a8a,#2563eb);
-  border:none;
-  color:#fff;
-  padding:.45rem .9rem;
-  border-radius:6px;
-  cursor:pointer;
-  font-size:.75rem;
-  font-weight:600;
-  text-transform:uppercase;
-  letter-spacing:.05em;
-  transition:transform .2s,box-shadow .2s
-}
-
-button:hover{
-  transform:translateY(-1px);
-  box-shadow:0 6px 18px rgba(37,99,235,.45)
 }
 
 @media(max-width:900px){
